@@ -6,31 +6,40 @@ This is ed25519 signature interoperability demo between python and PHP libraries
 
 Requirements
 ------------
-python 3.5 or later
-PHP 7.3 or later
+ * python 3.5 or later
+ * PHP 7.3 or later
 
 
 Preparation
 -----------
 1. Verify that libsodium support is enabled in PHP
-
+```
     $ php -i | grep sodium
     sodium
     sodium support => enabled
     libsodium headers version => 1.0.18
     libsodium library version => 1.0.18
+```
 
 2. Install python ed25519 library
-
+```
     sh install_pyenv.sh
+```
+
+3. Activate virtual environment
+```
+    . venv/bin/activate
+```
 
 
 Run
 ---
-
+```
 php sign_demo.php
-or
+# or #
 python sign_demo.py
+```
+These examples can be run in any order.
 
 
 Files
@@ -57,18 +66,18 @@ Troubleshooting
 
 PHP
 ---
-
+```
 PHP Fatal error:  Uncaught Error: Call to undefined function sodium_crypto_sign_keypair() in ...
-
+```
 You use PHP older than 7.2 or the sodium library support is disabled
 
 
 
 Python
 ------
-
+```
 ImportError: No module named ed25519
-
+```
 You have not installed dependencies or activated the virtual environment, please use install_pyenv.sh
 
 
